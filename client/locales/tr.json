@@ -9,7 +9,9 @@
     "Women":"Kadınlar",
     "Men":"Erkekler",
     "Everyone":"Herkes",
-    "Age Range":"Yaş Aralığı"
+    "Age Range":"Yaş Aralığı",
+    "First Name": "Ad",
+    "Last Name": "Soyad"
   },
   "Home": {
     "welcome": "Hoş Geldiniz",
@@ -80,6 +82,10 @@
   "Language":{
     "English":"İngilizce",
     "Turkish":"Türkçe"
+  },
+  "Common": {
+    "First Name is required": "Ad gereklidir",
+    "Last Name is required": "Soyad gereklidir"
   }
   
 }

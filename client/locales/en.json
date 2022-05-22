@@ -9,7 +9,9 @@
     "Women":"Women",
     "Men":"Men",
     "Everyone":"Everyone",
-    "Age Range":"Age Range"
+    "Age Range":"Age Range",
+    "First Name": "First Name",
+    "Last Name": "Last Name"
   },
   "Home": {
     "welcome": "Welcome",
@@ -81,8 +83,10 @@
   "Language":{
     "English":"English",
     "Turkish":"Turkish"
+  },
+  "Common": {
+    "First Name is required": "First Name is required",
+    "Last Name is required": "Last Name is required"
   }
   
-  
-
 }

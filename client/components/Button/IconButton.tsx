@@ -1,52 +1,147 @@
-import React, { FC } from 'react';
-import { StyleSheet, TouchableHighlight, View, Text } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
-import { useDispatch } from 'react-redux';
-import { addRoute } from '../../store/routeAction';
-import { Link } from 'react-router-native';
+import { StyleSheet, TouchableHighlight, Text, View } from 'react-native';
+import { useFonts } from 'expo-font';
 
-interface propsI {
-  title: string;
+interface PropsI {
+  title?: string;
+  clicked?: any;
+  validation?: any;
+  type?: any;
+  customCss?: any;
+  icon?: any;
 }
 
-const IconButton: FC<propsI> = ({ title }: propsI) => {
-  // const dispatch = useDispatch();
-  // function onClick() {
-  //   console.log("clicked")
-  //   dispatch(addRoute('email'));
-  // }
-  return (
-    <Link to="/login" style={styles.emailButton}>
-      <View style={styles.iconButton}>
-        <MaterialIcons name="email" size={24} color="white" style={{ marginRight: 20 }} />
-        <Text style={{ color: '#ffffff', fontWeight: 'bold', textAlign: 'center' }}>{title}</Text>
-      </View>
-    </Link>
-  );
+const IconButton: React.FC<PropsI> = ({ title, clicked, validation, type, customCss, icon }) => {
+  let [fontsLoaded] = useFonts({
+    'Modernist-Bold': require('../../assets/fonts/Sk-Modernist-Bold.otf'),
+  });
+
+  if (!fontsLoaded) {
+    return <Text>Loading...</Text>;
+  }
+
+  function typeButton() {
+    if (type === 'Primary') {
+      return (
+        <>
+          <TouchableHighlight
+            style={[styles.iconButton, customCss && customCss]}
+            disabled={validation}
+            onPress={() => clicked()}>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                width: '100%',
+              }}>
+              <View
+                style={{
+                  width: '35%',
+                }}>
+                <Text
+                  style={{
+                    marginLeft: 'auto',
+                  }}>
+                  {icon}
+                </Text>
+              </View>
+              <View
+                style={{
+                  width: '65%',
+                }}>
+                <Text
+                  style={{
+                    fontFamily: 'Modernist-Bold',
+                    fontSize: 16,
+                    lineHeight: 21,
+                    color: '#ffffff',
+                    fontWeight: 'bold',
+                    marginLeft: 20,
+                  }}>
+                  {title}
+                </Text>
+              </View>
+            </View>
+          </TouchableHighlight>
+        </>
+      );
+    } else if (type === 'Secondary') {
+      return (
+        <TouchableHighlight style={styles.whiteButton} onPress={() => clicked()}>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+            }}>
+            <View
+              style={{
+                width: '35%',
+              }}>
+              <Text
+                style={{
+                  marginLeft: 'auto',
+                }}>
+                {icon}
+              </Text>
+            </View>
+            <View
+              style={{
+                width: '65%',
+              }}>
+              <Text
+                style={{
+                  fontFamily: 'Modernist-Bold',
+                    fontSize: 16,
+                    lineHeight: 21,
+                    color: 'black',
+                    fontWeight: 'bold',
+                    marginLeft: 20,
+                }}>
+                {title}
+              </Text>
+            </View>
+          </View>
+        </TouchableHighlight>
+      );
+    }
+  }
+  return <>{type && typeButton()}</>;
 };
 
 const styles = StyleSheet.create({
-  emailButton: {
-    backgroundColor: '#000000',
-    height: 45,
-    width: '72%',
-    borderRadius: 100,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 10,
+  },
+  iconButton: {
+    height: 58,
+    width: '100%',
+    borderRadius: 15,
     borderWidth: 1,
-    borderColor: '#000000',
+    backgroundColor: '#EF0A6A',
+    borderColor: '#EF0A6A',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 12,
+    marginBottom: 10,
   },
-  iconButton: {
+  whiteButton: {
+    height: 58,
     width: '100%',
+    borderRadius: 15,
+    borderWidth: 1,
+    borderColor: '#E8E6EA',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
-    paddingLeft: '10%',
-    paddingRight: '25%',
+    marginBottom: 10,
   },
 });
 

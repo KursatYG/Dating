@@ -1,8 +1,15 @@
 {
   "components": {
-    "Remember Me" : "Remember Me",
+    "Remember Me": "Remember Me",
     "Email": "Email",
-    "Password": "Password"
+    "Password": "Password",
+    "Empty":"Empty",
+    "All Media":"All Media",
+    "Show Me":"Show Me",
+    "Women":"Women",
+    "Men":"Men",
+    "Everyone":"Everyone",
+    "Age Range":"Age Range"
   },
   "Home": {
     "welcome": "Welcome",
@@ -26,5 +33,56 @@
       "Email is required": "Email is required",
       "Password is required": "Password is required"
     }
+  },
+  "Onboarding": {
+    "Algorithm":"Algorithm",
+    "Users going": "Users going through a review process to ensure you never match with bots.",
+    "Create an account": "Create an account",
+    "Already have an account?": "Already have an account?",
+    "Sign in": "Sign in"
+  },
+  "Settings": {
+    "Security":"Security",
+    "Edit Profile":"Edit Profile",
+    "Settings":"Settings",
+    "Exit":"Exit",
+    "Language":"Language"
+  },
+  "EditProfile":{
+    "Edit Profile":"Edit Profile",
+    "All Media":"All Media",
+    "About Me":"About Me",
+    "Your Interests":"Your Interests",
+    "Lifestyle":"Lifestyle",
+    "Sexual Orientation":"Sexual Orientation",
+    "Add Sexual Orientation":"Add Sexual Orientation",
+    "Company":"Company",
+    "Add Company":"Add Company",
+    "Company Appellation":"Company Appellation",
+    "Add Company Appellation":"Add Company Appellation",
+    "School":"School",
+    "Add School":"Add School",
+    "City":"City",
+    "Add City":"Add City",
+    "Instagram":"Instagram Photos",
+    "Add Instagram":"Add Instagram"
+  },
+  "Interests":{
+    "Shopping":"Shopping",
+    "Run":"Run",
+    "Traveling":"Traveling"
+  },
+  "Lifestyle":{
+    "Zodiac Sign":"Zodiac Sign",
+    "Pets":"Pets",
+    "Cigarette":"Cigarette",
+    "Alcohol":"Alcohol"
+  },
+  "Language":{
+    "English":"English",
+    "Turkish":"Turkish"
   }
+  
+  
+
 }

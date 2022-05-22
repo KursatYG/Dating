@@ -1,8 +1,15 @@
 {
   "components": {
-    "Remember Me" : "Beni Hatırla",
+    "Remember Me": "Beni Hatırla",
     "Email": "E-posta",
-    "Password": "Parola"
+    "Password": "Parola",
+    "Empty":"Boş",
+    "All Media":"Tüm Medya",
+    "Show Me":"Bana Göster",
+    "Women":"Kadınlar",
+    "Men":"Erkekler",
+    "Everyone":"Herkes",
+    "Age Range":"Yaş Aralığı"
   },
   "Home": {
     "welcome": "Hoş Geldiniz",
@@ -24,5 +31,55 @@
     "Please enter valid email": "Lütfen geçerli bir e-posta girin",
     "Email is required": "Email gereklidir",
     "Password is required": "Şifre gereklidir"
+  },
+  "Onboarding": {
+    "Algorithm":"Algoritma",
+    "Users going":"Botlarla asla eşleşmemenizi sağlamak için bir inceleme sürecinden geçen kullanıcılar." ,
+    "Create an account": "Hesap oluştur",
+    "Already have an account?": "Zaten bir hesabınız var mı?",
+    "Sign in": "Giriş yap"
+  },
+  "Settings": {
+    "Security":"Güvenlik",
+    "Edit Profile":"Profili Düzenle",
+    "Settings":"Ayarlar",
+    "Exit":"Çıkış",
+    "Language":"Dil"
+  },
+  "EditProfile":{
+    "Edit Profile":"Profili Düzenle",
+    "All Media":"Tüm Medya",
+    "About Me":"Hakkımda",
+    "Your Interests":"İlgi Alanların",
+    "Lifestyle":"Yaşam Tarzı",
+    "Sexual Orientation":"Cinsel Yönelim",
+    "Add Sexual Orientation":"Cinsel Yönelim Ekle",
+    "Company":"Şirket",
+    "Add Company":"Şirket Ekle",
+    "Company Appellation":"Şirket Unvanı",
+    "Add Company Appellation":"Şirket Unvanı Ekle",
+    "School":"Okul",
+    "Add School":"Okul Ekle",
+    "City":"Şehir",
+    "Add City":"Şehir Ekle",
+    "Instagram":"Instagram Fotoğrafları",
+    "Add Instagram":"Instagram Ekle"
+
+  },
+  "Interests":{
+    "Shopping":"Alışveriş Yapmak",
+    "Run":"Koşmak",
+    "Traveling":"Seyahat Etmek"
+  },
+  "Lifestyle":{
+    "Zodiac Sign":"Burç",
+    "Pets":"Evcil Hayvanlar",
+    "Cigarette":"Sigara",
+    "Alcohol":"Alkol"
+  },
+  "Language":{
+    "English":"İngilizce",
+    "Turkish":"Türkçe"
   }
+  
 }

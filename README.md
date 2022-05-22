@@ -2,6 +2,12 @@
 
 Full-Stack I Lover App
 
+## Endpoint
+
+```sh
+http://ec2-34-201-103-48.compute-1.amazonaws.com/
+```
+
 ## About The Project
 
 Lorem Ipsum
@@ -74,6 +80,7 @@ npm & yarn install
 
 ## Roadmap
 
+- [x] Dockerizing Nodejs
 - [x] React Native Configure<br />
 - [ ] Backend Configration<br />
 - [x] Login Page<br />

@@ -1,85 +1,103 @@
-import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, FlatList, ScrollView } from 'react-native';
 import PrimaryButton from '../components/Button/PrimaryButton';
 import i18n from '../locales';
 import BasicButton from '../components/Button/BasicButton';
 import { useNavigate } from 'react-router-native';
+import React from 'react';
 
-function Onboarding({}) {
+const Data = [
+  {
+    id: '0',
+    text: `${i18n.t('Onboarding.Users going')}`,
+    title: `${i18n.t('Onboarding.Algorithm')}`,
+    image: require('../assets/girl1.png'),
+  },
+  {
+    id: '2',
+    text: `${i18n.t('Onboarding.Users going')}`,
+    title: `${i18n.t('Onboarding.Create an account')}`,
+    image: require('../assets/girl2.png'),
+  },
+  {
+    id: '3',
+    text: `${i18n.t('Onboarding.Users going')}`,
+    title: `${i18n.t('Onboarding.Sign in')}`,
+    image: require('../assets/girl3.png'),
+  },
+];
+
+const Item = ({ title, text, image }: any) => (
+  <>
+    <SafeAreaView style={{ borderWidth: 1 }}>
+      <View style={styles.photos}>
+        <Image source={image} />
+      </View>
+      <Text style={styles.title}> {title} </Text>
+      <Text style={styles.text}> {text}</Text>
+    </SafeAreaView>
+  </>
+);
+
+const Onboarding = () => {
+  const renderItem = ({ item }: any) => (
+    <Item title={item.title} text={item.text} image={item.image} />
+  );
 
   const navigate = useNavigate();
   function onPress() {
     navigate('/login');
   }
 
-
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.photo}>
-        <View style={styles.photos}>
-          <Image style={styles.leftImage} source={require('../assets/girl1.png')} />
-          <Image style={styles.centerImage} source={require('../assets/girl2.png')} />
-          <Image style={styles.rightImage} source={require('../assets/girl3.png')} />
-        </View>
-      </View>
-      <View style={styles.texting}>
-        <Text style={styles.title}>{i18n.t('Onboarding.Algorithm')}</Text>
-        <Text style={styles.text}>
-          {i18n.t('Onboarding.Users going')}
-        </Text>
-        <View style={styles.circles}>
-          <View style={styles.circleActive}></View>
-          <View style={styles.circle}></View>
-          <View style={styles.circle}></View>
-        </View>
-      </View>
-      <View style={styles.login}>
-        <PrimaryButton customCss={styles.buttonSign} type={'Primary'} title={i18n.t('Onboarding.Create an account')} />
-        <BasicButton
-          clicked={onPress}
-          customCss={styles.signText}
-          title={i18n.t('Onboarding.Already have an account?')}
-          coloredText={i18n.t('Onboarding.Sign in')}
-        />
-      </View>
+      <FlatList
+        horizontal
+        data={Data}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={{
+          alignItems: 'center',
+        }}
+        style={{ marginLeft: 'auto', marginRight: 'auto' }}></FlatList>
     </SafeAreaView>
+
+    /* <View style={styles.circles}>
+            <View style={styles.circleActive}></View>
+            <View style={styles.circle}></View>
+            <View style={styles.circle}></View>
+          </View>
+        <View style={styles.login}>
+          <PrimaryButton
+            customCss={styles.buttonSign}
+            type={'Primary'}
+            title={i18n.t('Onboarding.Create an account')}
+          />
+          <BasicButton
+            clicked={onPress}
+            customCss={styles.signText}
+            title={i18n.t('Onboarding.Already have an account?')}
+            coloredText={i18n.t('Onboarding.Sign in')}
+          />
+        </View> */
   );
-}
+};
 const styles = StyleSheet.create({
   container: {
-    width: '80%',
+    width: '100%',
     flex: 1,
     marginLeft: 'auto',
     marginRight: 'auto',
     flexDirection: 'column',
-  },
-  photo: {
-    flex: 2.5,
-    display: 'flex',
-    alignItems: 'center',
-    marginTop:70,
-    marginBottom:44
+    borderWidth: 1,
   },
   photos: {
-    alignItems:'center',
+    marginRight: 24,
+  },
+  photo: {
     display: 'flex',
     flexDirection: 'row',
-  },
-  centerImage: {
-    width: 235,
-    height: 360,
-    marginRight: 24,
-    marginLeft: 24,
-  },
-  leftImage: {
-    width: 200,
-    height: 300,
-  },
-  rightImage: {
-    width: 200,
-    height: 300,
-  },
-  texting: {
-    flex: 1.2,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   title: {
     fontSize: 24,
@@ -89,6 +107,7 @@ const styles = StyleSheet.create({
     lineHeight: 36,
     fontWeight: 'bold',
     marginBottom: 10,
+    marginTop: 44,
   },
   text: {
     color: '#323755',
@@ -122,8 +141,8 @@ const styles = StyleSheet.create({
   login: {
     flex: 1,
   },
-  buttonSign:{
-      marginBottom:20
+  buttonSign: {
+    marginBottom: 20,
   },
   signText: {
     textAlign: 'center',
